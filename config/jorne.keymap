@@ -98,37 +98,28 @@
 
         lower_layer {
             bindings = <
-&none  &none  &none      &kp NUMBER_3            &kp NUMBER_2          &kp NUMBER_1            &kp ASTERISK    &none   &kp EXCLAMATION   &kp AT_SIGN                   &kp HASH               &none  &none  &none
-       &none  &kp EQUAL  &hml LEFT_ALT NUMBER_6  &hml LEFT_CONTROL N5  &hml LEFT_GUI NUMBER_4  &kp KP_SLASH    &none   &hmr RGUI DOLLAR  &hmr RIGHT_CONTROL AMPERSAND  &hmr RIGHT_ALT CARET   &none  &none
-       &none  &kp MINUS  &kp N9                  &kp N8                &kp NUMBER_7            &kp N0          &none   &kp AMPERSAND     &kp LEFT_PARENTHESIS          &kp RIGHT_PARENTHESIS  &none  &none
-                                                 &lt 3 TAB             &trans                  &trans          &trans  &trans            &lt 3 DELETE
+&none  &kp TILDE       &kp N1           &kp N2       &kp N3    &kp N4       &kp N5          &kp N6      &kp N7         &kp N8        &kp N9                &kp N0                 &kp F17  &none
+       &kp GRAVE       &kp EXCLAMATION  &kp AT_SIGN  &kp HASH  &kp DOLLAR   &kp KP_SLASH    &kp CARET   &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp F18
+       &kp LEFT_SHIFT  &trans           &trans       &trans    &kp LG(F11)  &kp LG(F12)     &trans      &trans         &trans        &trans                &trans                 &kp F14
+                                                     &mo 4     &trans       &kp LEFT_GUI    &kp PERIOD  &kp KP_COMMA   &kp QMARK
             >;
         };
 
         raise_layer {
             bindings = <
-&none  &none  &kp F1  &kp F2   &kp F3   &kp F4   &none        &none      &none     &mt SEMICOLON COLON   &mt QUESTION EXCLAMATION  &none            &none  &none
-       &none  &kp F5  &kp F6   &kp F7   &kp F8   &none        &none      &kp LEFT  &kp DOWN_ARROW        &kp UP_ARROW              &kp RIGHT_ARROW  &none
-       &none  &kp F9  &kp F10  &kp F11  &kp F12  &none        &none      &none     &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC      &none            &none
-                               &trans   &trans   &lt 3 RET    &lt 3 ESC  &trans    &trans
-            >;
-        };
-
-        adjust_layer {
-            bindings = <
-&none  &studio_unlock  &sys_reset  &bootloader   &out OUT_TOG  &ext_power EP_TOG  &soft_off       &soft_off     &ext_power EP_TOG  &out OUT_TOG  &bootloader   &sys_reset  &studio_unlock  &none
-       &bt BT_CLR_ALL  &bt BT_CLR  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3       &bt BT_SEL 4    &bt BT_SEL 4  &bt BT_SEL 3       &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_CLR  &trans
-       &none           &none       &none         &none         &none              &none           &none         &none              &none         &none         &none       &none
-                                                 &trans        &none              &trans          &trans        &none              &trans
+&none  &trans        &trans  &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN    &kp HOME       &kp CARET  &kp PAGE_UP  &kp UP_ARROW    &kp PAGE_DOWN    &kp HOME  &kp F17       &none
+       &trans        &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END        &kp MINUS  &kp LEFT     &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END   &kp F18
+       &out OUT_TOG  &trans  &trans          &trans          &trans           &kp F15        &kp F16    &kp F23      &trans          &trans           &trans    &out OUT_TOG
+                                             &trans          &kp LG(F11)      &kp LG(F12)    &trans     &trans       &trans
             >;
         };
 
         fbuttons_layer {
             bindings = <
-&none  &none  &kp F1  &kp F2   &kp F3   &kp F4   &none        &none      &none     &mt SEMICOLON COLON   &mt QUESTION EXCLAMATION  &none            &none  &none
-       &none  &kp F5  &kp F6   &kp F7   &kp F8   &none        &none      &kp LEFT  &kp DOWN_ARROW        &kp UP_ARROW              &kp RIGHT_ARROW  &none
-       &none  &kp F9  &kp F10  &kp F11  &kp F12  &none        &none      &none     &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC      &none            &none
-                               &trans   &trans   &lt 3 RET    &lt 3 ESC  &trans    &trans
+&none  &kp F1  &kp F2  &kp F3  &kp F4   &kp F5   &kp F6     &trans  &trans  &kp LALT  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &trans  &none
+       &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12    &trans  &trans  &trans    &trans           &trans             &trans
+       &trans  &trans  &trans  &trans   &trans   &trans     &trans  &trans  &trans    &trans           &trans             &trans
+                               &trans   &trans   &trans     &trans  &trans  &trans
             >;
         };
 
