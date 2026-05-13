@@ -55,34 +55,6 @@
             hold-trigger-on-release;
         };
 
-        tkl: tkl {
-            compatible = "zmk,behavior-hold-tap";
-            label = "TKL";
-            bindings = <&mo>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <220>;
-            quick-tap-ms = <175>;
-            flavor = "balanced";
-            require-prior-idle-ms = <100>;
-            hold-trigger-key-positions = <7 8 9 10 11 12 13 20 21 22 23 24 25 32 33 34 35 36 37 38 39 40 41 42 43>;
-            hold-trigger-on-release;
-        };
-
-        tkr: tkr {
-            compatible = "zmk,behavior-hold-tap";
-            label = "TKR";
-            bindings = <&mo>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <220>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <100>;
-            flavor = "balanced";
-            hold-trigger-key-positions = <0 1 2 3 4 5 6 14 15 16 17 18 19 26 27 28 29 30 31 38 39 40 41 42 43>;
-            hold-trigger-on-release;
-        };
-
         copy: copy {
             compatible = "zmk,behavior-tap-dance";
             label = "COPY";
@@ -94,7 +66,14 @@
             compatible = "zmk,behavior-tap-dance";
             label = "PASTE";
             #binding-cells = <0>;
-            bindings = <&kp V>, <&kp INSERT>;
+            bindings = <&kp V>, <&kp K_PASTE>;
+        };
+
+        cut: cut {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CUT";
+            #binding-cells = <0>;
+            bindings = <&kp X>, <&kp K_CUT>;
         };
     };
 
@@ -141,6 +120,24 @@
        &bt BT_CLR_ALL  &bt BT_CLR  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3       &bt BT_SEL 4    &bt BT_SEL 4  &bt BT_SEL 3       &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_CLR  &trans
        &none           &none       &none         &none         &none              &none           &none         &none              &none         &none         &none       &none
                                                  &trans        &none              &trans          &trans        &none              &trans
+            >;
+        };
+
+        fbuttons_layer {
+            bindings = <
+&none  &none  &kp F1  &kp F2   &kp F3   &kp F4   &none        &none      &none     &mt SEMICOLON COLON   &mt QUESTION EXCLAMATION  &none            &none  &none
+       &none  &kp F5  &kp F6   &kp F7   &kp F8   &none        &none      &kp LEFT  &kp DOWN_ARROW        &kp UP_ARROW              &kp RIGHT_ARROW  &none
+       &none  &kp F9  &kp F10  &kp F11  &kp F12  &none        &none      &none     &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC      &none            &none
+                               &trans   &trans   &lt 3 RET    &lt 3 ESC  &trans    &trans
+            >;
+        };
+
+        adjust_layer {
+            bindings = <
+&none  &studio_unlock  &sys_reset    &bootloader   &out OUT_TOG  &ext_power EP_TOG  &soft_off       &soft_off     &ext_power EP_TOG  &out OUT_TOG  &bootloader   &sys_reset    &studio_unlock  &none
+       &bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3       &bt BT_SEL 4    &bt BT_SEL 4  &bt BT_SEL 3       &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bt BT_CLR
+       &none           &kp KP_NUM    &none         &none         &none              &none           &none         &none              &none         &none         &none         &none
+                                                   &trans        &trans             &trans          &trans        &trans             &trans
             >;
         };
     };
