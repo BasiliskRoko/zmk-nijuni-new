@@ -78,16 +78,6 @@
             key-positions = <9 10>;
         };
 
-        Mainbootloaderleft {
-            bindings = <&bootloader>;
-            key-positions = <5 1>;
-        };
-
-        Mainbootloaderright {
-            bindings = <&bootloader>;
-            key-positions = <8 12>;
-        };
-
         DoubleQuote {
             bindings = <&kp DOUBLE_QUOTES>;
             key-positions = <18 17>;
