@@ -87,6 +87,16 @@
             bindings = <&kp APOSTROPHE>;
             key-positions = <21 22>;
         };
+
+        Backslash {
+            bindings = <&kp BSLH>;
+            key-positions = <12 25>;
+        };
+
+        Forwardslash {
+            bindings = <&kp SLASH>;
+            key-positions = <25 37>;
+        };
     };
 
     behaviors {
@@ -152,28 +162,28 @@
             //                        | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp ESC    &kp Q            &kp W            &kp E                &kp R              &kp T               &kp Y        &kp U               &kp I                 &kp O             &kp P                    &lt 3 LEFT_BRACKET           &none
-       &kp TAB    &hml LEFT_GUI A  &hml LEFT_ALT S  &hml LEFT_CONTROL D  &hml LEFT_SHIFT F  &kp G               &kp H        &hmr RIGHT_SHIFT J  &hmr RIGHT_CONTROL K  &hmr RIGHT_ALT L  &mt RIGHT_GUI SEMICOLON  &kp SINGLE_QUOTE
-       &kp LSHFT  &kp Z            &cut             &copy                &paste             &kp B               &kp N        &kp M               &kp COMMA             &kp DOT           &kp FSLH                 &mt RIGHT_ALT RIGHT_BRACKET
-                                                    &kp LEFT_CONTROL     &mo 1              &mt LEFT_GUI RET    &lt 2 SPACE  &kp BACKSPACE       &kp DELETE
+&none  &kp ESC    &kp Q  &kp W            &kp E                &kp R              &kp T               &kp Y        &kp U               &kp I                 &kp O             &kp P          &lt 3 LEFT_BRACKET          &none
+       &kp TAB    &kp A  &hml LEFT_ALT S  &hml LEFT_CONTROL D  &hml LEFT_SHIFT F  &kp G               &kp H        &hmr RIGHT_SHIFT J  &hmr RIGHT_CONTROL K  &hmr RIGHT_ALT L  &kp SEMICOLON  &kp SINGLE_QUOTE
+       &kp LSHFT  &kp Z  &cut             &copy                &paste             &kp B               &kp N        &kp M               &kp COMMA             &kp DOT           &kp FSLH       &mt LEFT_ALT RIGHT_BRACKET
+                                          &kp LEFT_CONTROL     &mo 1              &mt LEFT_GUI RET    &lt 2 SPACE  &kp BACKSPACE       &kp DELETE
             >;
         };
 
         lower_layer {
             bindings = <
 &none  &kp TILDE       &kp N1           &kp N2       &kp N3    &kp N4       &kp N5          &kp N6      &kp N7         &kp N8        &kp N9                &kp N0                 &kp F17  &none
-       &kp GRAVE       &kp EXCLAMATION  &kp AT_SIGN  &kp HASH  &kp DOLLAR   &kp KP_SLASH    &kp CARET   &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp F18
+       &kp GRAVE       &kp EXCLAMATION  &kp AT_SIGN  &kp HASH  &kp DOLLAR   &kp PERCENT     &kp CARET   &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp F18
        &kp LEFT_SHIFT  &trans           &trans       &trans    &kp LG(F11)  &kp LG(F12)     &trans      &trans         &trans        &trans                &trans                 &kp F14
-                                                     &mo 4     &trans       &kp LEFT_GUI    &kp PERIOD  &kp KP_COMMA   &kp QMARK
+                                                     &mo 4     &trans       &kp LEFT_GUI    &kp PERIOD  &kp COMMA      &kp QMARK
             >;
         };
 
         raise_layer {
             bindings = <
-&none  &trans        &trans  &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN    &kp HOME       &kp CARET  &kp PAGE_UP  &kp UP_ARROW    &kp PAGE_DOWN    &kp HOME  &kp F17       &none
-       &trans        &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END        &kp MINUS  &kp LEFT     &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END   &kp F18
-       &out OUT_TOG  &trans  &trans          &trans          &trans           &kp F15        &kp F16    &kp F23      &trans          &trans           &trans    &out OUT_TOG
-                                             &trans          &kp LG(F11)      &kp LG(F12)    &trans     &trans       &trans
+&none  &trans        &kp INSERT  &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN           &kp HOME                   &kp CARET  &kp PAGE_UP  &kp UP_ARROW    &kp PAGE_DOWN    &kp HOME  &kp F17       &none
+       &trans        &trans      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW         &kp END                    &kp MINUS  &kp LEFT     &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END   &kp F18
+       &out OUT_TOG  &trans      &trans          &trans          &trans                  &kp F15                    &kp F16    &kp F23      &trans          &trans           &trans    &out OUT_TOG
+                                                 &trans          &kp LG(LS(LEFT_ARROW))  &kp LG(LS(RIGHT_ARROW))    &trans     &trans       &trans
             >;
         };
 
