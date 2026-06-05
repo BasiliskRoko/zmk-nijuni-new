@@ -117,7 +117,8 @@
 
         lang {
             bindings = <&kp LS(LEFT_ALT)>;
-            key-positions = <39 42>;
+            key-positions = <43 38>;
+            layers = <0 5>;
         };
     };
 
