@@ -74,31 +74,7 @@ west build -b nice_nano_v2 -d build/jorne_right -- -DSHIELD=jorne_right
 - **Слои**: 3 (base, symbols/BT, numbers/navigation)
 
 ### Раскладка
-
-#### Base layer
-```
-| ESC |  Q  |  W  |  E  |  R  |  T  |    |  Y  |  U  |  I  |  O  |  P  | BKSP|
-| TAB |  A  |  S  |  D  |  F  |  G  |    |  H  |  J  |  K  |  L  |  '  | ' |
-|SHFT |  Z  |  X  |  C  |  V  |  B  |    |  N  |  M  |  ,  |  .  |  /  |SHFT|
-           | CMD | L1  | SPC |  ENT | L2 | ALT |
-```
-
-#### L1 layer (Symbols + Bluetooth)
-- `BT_CLR` — очистить все Bluetooth профили
-- `BT_SEL 0-4` — выбрать профиль (на левой половине)
-- Стрелки, громкость, Cmd+C/V/X
-
-#### L2 layer (Numbers + Navigation)
-- Numpad (левая сторона)
-- Стрелки, Home/End, Page Up/Down (правая сторона)
-
-### Custom behaviors
-- **hml/hmr**: Hold-Tap для левых/правых модификаторов (CTRL, ALT, SHIFT, CMD)
-- **tkl/tkr**: Layer toggle (hold для слоя, tap для клавиши)
-
-### Комбо
-- `Ctrl+Alt` → Toggle game mode (упрощённый layer без модификаторов)
-- `Q+W` → ESC
+![Раскладка](my_keymap.svg)
 
 ## Структура репозитория
 
@@ -129,7 +105,6 @@ CONFIG_BT_CTLR_TX_PWR_PLUS_8=y  # Увеличить мощность Bluetooth
 ```
 
 **Почему минимальная?**
-- Pointing device отключен (требует hardware)
 - Экспериментальные BLE опции отключены (стабильность)
 - Sleep отключён (не нужен для большинства)
 
@@ -137,7 +112,6 @@ CONFIG_BT_CTLR_TX_PWR_PLUS_8=y  # Увеличить мощность Bluetooth
 Раскладка для Jorne (44 позиции):
 - Row 1 начинается с `&none` (фантомная клавиша, физически отсутствует)
 - Custom behaviors для удобного использования модификаторов
-- 3 слоя для всех нужных функций
 
 ### `config/west.yml`
 ```yaml
@@ -151,52 +125,10 @@ revision: v0.2.1  # ZMK версия (важно для совместимост
 
 ## Редактирование раскладки
 
-### Добавить новую клавишу
-Найти нужную позицию в первом ряду нужного слоя и заменить:
-```
-&kp ESC → &kp ENTER  # ESC → ENTER
-```
+- **keymap-editor**: https://nickcoutsos.github.io/keymap-editor/
 
-### Изменить поведение при удержании
-Использовать `&mt` (mod-tap) или `&lt` (layer-tap):
-```
-&mt LEFT_CTRL A  # Ctrl при удержании, A при тапе
-&lt 1 SPACE      # Layer 1 при удержании, Space при тапе
-```
+- **keymap-drawer**: https://keymap-drawer.streamlit.app
 
-### Добавить новый слой
-1. Скопировать существующий слой в keymap
-2. Переименовать (например, `layer_4`)
-3. Добавить в keymap block
-
-## Обновление и техническое обслуживание
-
-### Обновить версию ZMK
-```yaml
-# config/west.yml
-revision: v0.3.0  # или main
-```
-**Внимание**: При переходе на main (Zephyr 4.1) нужно изменить:
-- `board: nice_nano_v2` → `board: nice_nano`
-- Переименовать shields (если требуется)
-
-### Добавить опции (RGB, display, sleep)
-1. Раскомментировать в `config/jorne.conf`
-2. Пересобрать
-3. Протестировать
-
-### Сбросить Bluetooth
-```bash
-# Прошить settings_reset на обе половины
-# Потом прошить нормальную прошивку
-```
-
-## Известные ограничения
-
-- ⚠️ Pointing device не поддерживается (нет hardware)
-- ⚠️ RGB Underglow закомментирован (нет hardware)
-- ⚠️ OLED Display закомментирован (нет hardware)
-- ⚠️ ZMK v0.2.1 — старая версия, но стабильная
 
 ## Ссылки и ресурсы
 
@@ -205,25 +137,4 @@ revision: v0.3.0  # или main
 - **ZMK GitHub**: https://github.com/zmkfirmware/zmk
 - **Bluetooth паринг troubleshooting**: https://zmk.dev/docs/troubleshooting/connection-issues
 
-## История версий
 
-**v1.0 (2026-02-15)** — Финальная рабочая конфигурация
-- ZMK v0.2.1 (стабильный)
-- Jorne shields (jorne_left, jorne_right)
-- nice_nano_v2
-- 3 слоя, custom behaviors, combos
-- ✅ Bluetooth паринг работает
-- ✅ Все клавиши функционируют
-
-## Контакты и вопросы
-
-При возникновении проблем:
-1. Посмотреть раздел "Проблемы при подключении?" выше
-2. Проверить `docs/configuration-summary.md` для деталей
-3. Проверить официальную документацию ZMK
-
----
-
-**Последнее обновление**: 15 февраля 2026
-
-🤖 Собрано с помощью Claude Code
