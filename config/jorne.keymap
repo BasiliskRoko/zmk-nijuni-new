@@ -175,8 +175,8 @@
             bindings = <
 &none  &none   &kp F1  &kp F2        &kp F3            &kp F4          &kp F5               &kp F6           &kp F7  &kp F8  &kp F9  &kp F10  &kp F11             &none
        &none   &none   &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp F11              &kp F12          &trans  &trans  &trans  &trans   &kp PSCRN
-       &trans  &trans  &trans        &trans            &trans          &kp C_VOLUME_DOWN    &kp C_VOLUME_UP  &trans  &trans  &trans  &trans   &kp K_CONTEXT_MENU
-                                     &kp LEFT_WIN      &trans          &trans               &trans           &trans  &trans
+       &trans  &trans  &trans        &trans            &kp K_MUTE      &kp C_VOLUME_DOWN    &kp C_VOLUME_UP  &trans  &trans  &trans  &trans   &kp K_CONTEXT_MENU
+                                     &kp LEFT_WIN      &trans          &mo 6                &mo 6            &trans  &trans
             >;
         };
 
@@ -195,6 +195,15 @@
         &kp TAB         &kp A  &kp S  &kp D   &kp F   &kp G     &kp H   &kp J   &kp K      &kp L    &kp SEMI  &kp SQT
         &kp LEFT_SHIFT  &kp Z  &kp X  &kp C   &kp V   &kp B     &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp RBKT
                                       &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        mouse {
+            bindings = <
+&trans  &trans  &trans  &trans          &msc SCRL_UP    &trans           &trans    &mkp MB5  &trans          &mmv MOVE_UP    &trans           &trans  &trans  &trans
+        &trans  &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans    &mkp MB4  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
+        &trans  &trans  &trans          &trans          &trans           &trans    &trans    &trans          &trans          &trans           &trans  &trans
+                                        &trans          &trans           &trans    &mkp MB1  &mkp MB3        &mkp MB2
             >;
         };
     };
