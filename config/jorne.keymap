@@ -164,10 +164,10 @@
 
         lower_layer {
             bindings = <
-&none  &kp GRAVE  &kp N1  &kp N2        &kp N3     &kp N4          &kp N5         &kp N6      &kp N7           &kp N8     &kp N9         &kp N0  &kp EQUAL  &none
-       &kp PLUS   &none   &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &none          &none       &kp RIGHT_SHIFT  &kp RCTRL  &kp RIGHT_ALT  &none   &kp MINUS
-       &tog 1     &tog 0  &trans        &trans     &kp LG(F11)     &kp LG(F12)    &trans      &trans           &trans     &trans         &trans  &kp F14
-                                        &mo 5      &trans          &trans         &kp PERIOD  &trans           &tog 0
+&none  &kp GRAVE  &kp N1        &kp N2           &kp N3        &kp N4             &kp N5         &kp N6      &kp N7           &kp N8     &kp N9         &kp N0  &kp EQUAL  &none
+       &kp PLUS   &kp NUMBER_6  &mt LEFT_ALT N7  &mt LCTRL N8  &mt LEFT_SHIFT N9  &kp N0         &none       &kp RIGHT_SHIFT  &kp RCTRL  &kp RIGHT_ALT  &none   &kp MINUS
+       &tog 1     &tog 0        &trans           &trans        &kp LG(F11)        &kp LG(F12)    &trans      &trans           &trans     &trans         &trans  &kp F14
+                                                 &mo 5         &trans             &trans         &kp PERIOD  &trans           &tog 0
             >;
         };
 
@@ -182,10 +182,10 @@
 
         fbuttons_layer {
             bindings = <
-&none  &none   &kp F1  &kp F2        &kp F3            &kp F4          &kp F5               &kp F6           &kp F7  &kp F8  &kp F9  &kp F10  &kp F11             &none
-       &none   &none   &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &kp F11              &kp F12          &trans  &trans  &trans  &trans   &kp PSCRN
-       &trans  &trans  &trans        &trans            &kp K_MUTE      &kp C_VOLUME_DOWN    &kp C_VOLUME_UP  &trans  &trans  &trans  &trans   &kp K_CONTEXT_MENU
-                                     &kp LEFT_WIN      &trans          &mo 6                &mo 6            &trans  &trans
+&none  &none   &kp F1   &kp F2           &kp F3               &kp F4             &kp F5               &kp F6           &kp F7          &kp F8     &kp F9        &kp F10  &kp F11             &none
+       &none   &kp F6   &mt LEFT_ALT F7  &mt LEFT_CONTROL F8  &mt LEFT_SHIFT F9  &kp F10              &kp F12          &kp LEFT_SHIFT  &kp LCTRL  &kp LEFT_ALT  &trans   &kp PSCRN
+       &trans  &kp F11  &kp F12          &none                &kp K_MUTE         &kp C_VOLUME_DOWN    &kp C_VOLUME_UP  &trans          &trans     &trans        &trans   &kp K_CONTEXT_MENU
+                                         &kp LEFT_WIN         &trans             &mo 6                &mo 6            &trans          &trans
             >;
         };
 
